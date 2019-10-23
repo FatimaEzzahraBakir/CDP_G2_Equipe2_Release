@@ -3,7 +3,7 @@
 ## BackLog
 
 | ID  |  Description    | Difficulté  | Priorité  |    État    |    Sprint associé    |
-|---|------|---|---|--------|
+|---|------|---|---|--------|-----|
 | #1 | En tant que visiteur je souhaite pouvoir m'inscrire en introduisant mon login (varchar de 20) , mon adresse mail (vérifier qu'elle est valide, en contenant un "@", varchar 50)  et mon password (varchar 30) et cliquer sur le bouton "S'inscrire" pour s'inscrire, ou le bouton "Annuler" pour retourner à la page d'accueil | 3 | Low | TODO | 1 |
 | #2 | En tant qu’utilisateur je souhaite pouvoir me connecter en saisissant mon login et password et cliquer sur le bouton "Se connecter". Si les identifiants sont les bons, on redirige vers la page des projets associée à mon compte. Et pouvoir me déconnecter en cliquant sur le bouton "Se déconnecter" | 2 | Low | TODO | 1 |
 | #3 | En tant qu'utilisateur je souhaite pouvoir créer un projet en lui donnant un nom (varchar 40) et une description (varchar 250), qui peut être optionnelle, et appuyer sur le bouton "Créer" pour l'enregistrer ou sur le bouton "Annuler" pour revenir en arrière| 2 | Low | TODO | 1 |
