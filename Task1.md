@@ -19,7 +19,7 @@
 |#13|Créer le fichier de gestion d'ajout d'un membre au projet (base de donnée)||TODO| 4 | 1 |
 |#14|Créer la table Issues contenant les champs ID (unsigned int 5), descriptif (varchar 250), difficulté (int 3), priorité (varchar 10) , un état (varchar 10) et un IdProject (clé étrangère vers le projet associé)| Fatima |DONE| 5 | 1/2 |
 |#15|Créer la page d'ajout d'issue "login"/projects/"nomProjet"/addIssue contenant un formulaire avec un champs description, difficulté, priorité et état, un bouton "ajouter" et un bouton "annuler"| Fatima |DOING| 5 | 1/2 |
-|#16|Créer le fichier de gestion d'ajout d'issue (insertion base de donnée)| Fatima |TODO| 5 | 1/2 |
+|#16|Créer le fichier de gestion d'ajout d'issue (insertion base de donnée)| Fatima |DOING| 5 | 1/2 |
 |#17|Créer la page d'affichage de toutes les issues "login"/projects/"nomProjet"/backlog contenant la liste de toutes les issues liées à "nomProjet" avec un bouton "ajouter", "modifier" et "supprimer"||TODO| 7 | 1 |
 |#18|Créer la gestion de classement d'issues par ordre de difficulté, de priorité ou d'état||TODO| 7 | 1 |
 |#19|Créer la gestion de la suppression d'une issue (delete base de donnée)||TODO| 6 | 1/2 |
