@@ -19,7 +19,7 @@
 |#13|Créer le fichier de gestion de modification d'un projet (update base de donnée)| Cyril |DOING| 22 | 1 |
 |#14|Créer le fichier de gestion de suppression d'un projet (delete base de donnée)|  |TODO| 22 | 1 |
 |#15|Créer la page de modification d'un projet, contenant un formulaire pour changer les champs du nom et de la description|  |TODO| 22 | 1 |
-|#16|Créer la page d'ajout d'issue "login"/projects/"nomProjet"/addIssue contenant un formulaire avec un champs description, difficulté, priorité et état, un bouton "ajouter" et un bouton "annuler"| Fatima |DOING| 5 | 1/2 |
+|#16|Créer la page d'ajout d'issue "login"/projects/"nomProjet"/addIssue contenant un formulaire avec un champs description, difficulté, priorité et état, un bouton "ajouter" et un bouton "annuler"| Fatima |DONE| 5 | 1/2 |
 |#17|Créer le fichier de gestion d'ajout d'issue (insertion base de donnée)| Fatima |DOING| 5 | 1/2 |
 |#18|Créer la page d'affichage de toutes les issues "login"/projects/"nomProjet"/backlog contenant la liste de toutes les issues liées à "nomProjet" avec un bouton "ajouter", "modifier" et "supprimer"|Claire|DONE| 7 | 1 |
 |#19|Créer la gestion de classement d'issues par ordre de difficulté, de priorité ou d'état||TODO| 7 | 1 |
