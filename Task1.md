@@ -4,7 +4,7 @@
 
 | ID | Descriptif | Développeur | État | Issue associée | Coût |
 | :-: | -- | :-: | :-: | :-: | :-: |
-| #1 | Créer la base de donnée : créer la table Users contenant les champs ID (unsigned int 5), login (varchar 20), mail (varchar 50), password (varchar 30), la table Issues contenant les champs ID (unsigned int 5), descriptif (varchar 250), difficulté (int 3), priorité (varchar 10) , un état (varchar 10) et un IdProject (clé étrangère vers le projet associé),  la table Projects avec les champs ID (unsigned int 5), un nom (varchar 40), une description (varchar 250) qui peut etre null| Fatima | DONE | 1 | 1/2 |
+| #1 | Créer la base de donnée : créer la table Users contenant les champs ID (unsigned int 5), login (varchar 20), mail (varchar 50), password (varchar 30), la table Issues contenant les champs ID (unsigned int 5), descriptif (varchar 250), difficulté (int 3), priorité (varchar 10) , un état (varchar 10) et un IdProject (clé étrangère vers le projet associé),  la table Projects avec les champs ID (unsigned int 5), un nom (varchar 40), une description (varchar 250) qui peut etre null| Fatima | DONE | 1, 3, 5 | 1/2 |
 |#2|Créer la page web d'accueil du site /accueil contenant un bouton "S'inscrire" et un bouton "Se connecter"| Claire|DONE| 1 | 1/2 |
 |#3|Créer la page d'inscription /signup contenant un formulaire avec les champs login, mail, password et un bouton "s'inscrire" et "annuler"| Fatima| DONE | 1 | 1/2 |
 |#4|Créer le fichier de gestion d'inscription (insertion en base de donnée)| Cyril |DONE | 1 | 1/2 |
