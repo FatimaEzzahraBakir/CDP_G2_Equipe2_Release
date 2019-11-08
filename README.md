@@ -10,7 +10,7 @@ Somme des difficultés = 45
 | #2 | En tant qu’utilisateur je souhaite pouvoir me connecter en saisissant mon login et password et cliquer sur le bouton "Se connecter". Si les identifiants sont les bons, on redirige vers la page des projets associée à mon compte. Et pouvoir me déconnecter en cliquant sur le bouton "Se déconnecter" | 2 | Low | DONE | 1 |
 | #3 | En tant qu'utilisateur je souhaite pouvoir créer un projet en lui donnant un nom (varchar 40) et une description (varchar 250), qui peut être optionnelle, et appuyer sur le bouton "Créer" pour l'enregistrer ou sur le bouton "Annuler" pour revenir en arrière| 2 | Low | DONE | 1 |
 | #4 | En tant qu'utilisateur je souhaite pouvoir inviter des personnes, ayant déjà créé un compte, en leur donnant un rôle (développeur, ...) en cliquant sur le bouton "Ajouter" sur la page d'un projet| 2 | Low | DONE | 1 |
-| #5 | En tant qu’utilisateur, je souhaite pouvoir ajouter une issue dans un backlog de mon projet qui contient un ID (unsigned int 5), un descriptif (varchar 250), une difficulté (int 3), une priorité (varchar 10) et un état (varchar 10) en cliquant sur le bouton "Ajouter" après avoir rempli le formulaire| 2 | High | DOING | 1 |
+| #5 | En tant qu’utilisateur, je souhaite pouvoir ajouter une issue dans un backlog de mon projet qui contient un ID (unsigned int 5), un descriptif (varchar 250), une difficulté (int 3), une priorité (varchar 10) et un état (varchar 10) en cliquant sur le bouton "Ajouter" après avoir rempli le formulaire| 2 | High | DONE | 1 |
 | #6 | En tant qu’utilisateur, je souhaite pouvoir supprimer une issue de mon projet en cliquant sur le bouton "Supprimer", ou modifier son descriptif, sa difficulté, sa priorité et son état en cliquant sur le bouton "Modifier"| 2 | High | DONE | 1 |
 | #7 | En tant qu’utilisateur, je souhaite pouvoir afficher la liste de toutes les issues de mon projet afin de pouvoir les classer par ordre de difficulté, de priorité ou d’état | 2 | High | DOING | 1 |
 | #8| En tant qu'utilisateur je souhaite pouvoir choisir un projet dans la liste des différents projets auxquels je participe pour accéder à son Backlog et ses sprints | 2 | High | TODO|  |
@@ -39,3 +39,27 @@ Les tâches associées à ce sprint sont disponible ici : https://github.com/Fat
 ## Release
 
 Les différentes releases sont renseignées dans Release.md : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Release.md
+
+## Installation
+
+Après avoir télécharger une des releases, extraire l'archive. Se placer dans le dossier et executer ces commandes via un terminal :
+
+```
+npm install bcrypt
+npm install body-parser
+npm install connect-flash
+npm install ejs
+npm install express
+npm install express-session
+npm install express-validator
+npm install mongoose
+npm install passport
+npm install passport-local
+```
+
+Une fois toutes ces dépendances installées, vous pourrez lancer le programme, depuis le même dossier, avec cette commande :
+
+```
+node app.js
+```
+Pour voir l'application, depuis un navigateur se rendre à l'adresse : http://localhost:8080/
