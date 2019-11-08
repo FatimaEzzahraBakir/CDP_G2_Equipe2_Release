@@ -28,3 +28,14 @@ Somme des difficultés = 45
 | #20 | En tant qu’utilisateur, je souhaite créer une documentation utilisateur (varchar 500) en y expliquant les fonctionnalités du projet et une documentation administrateur (varchar 500) pour expliquer comment déployer et faire marcher le projet en cliquant sur le bouton "Ajouter une documentation"| 2 | Low | TODO |  |
 | #21 | En tant qu’utilisateur, je souhaite modifier en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" une documentation utilisateur ou une documentation administrateur| 2 | Low | TODO |  |
 | #22 | En tant qu’utilisateur, je souhaite modifier le nom ou la description du projet en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" un projet| 2 | Low | TODO |  |
+
+## Sprints
+
+### Sprint 1
+Les détails pour le sprint 1 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint1.md .
+Les tâches associées à ce sprint sont disponible ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Task1.md
+
+
+## Release
+
+Les différentes releases sont renseignées dans Release.md : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Release.md
