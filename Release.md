@@ -2,7 +2,9 @@
 
 ## Release v0.1.0
 
-Date de cette release : 08/11/19 - 17h00
+Date de cette release : 08/11/19 - 16h10
+
+Liens pour le téléchargement : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/releases/tag/CDP
 
 ### Liste des User Stories présentes dans cette release
 
