@@ -1,0 +1,58 @@
+body, html{
+  height: 100%;
+}
+
+.identification{
+  width: 200px;
+  margin: 0 auto;
+  margin-top:10%;
+}
+
+.btn-large {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.right {
+  position: absolute;
+  right: 0px;
+}
+
+.cardmargin {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.card-pannel.small.red.darken-2.white-text {
+  margin-top: 4px;
+}
+
+.card-pannel.small.green.darken-1.white-text {
+  margin-top: 4px;
+}
+
+nav {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.card .card-content .card-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.center-border {
+  line-height: 50px;
+  height: 100%;
+  border: 2px solid #26a69a;
+  text-align: center;
+}
+
+#submitmember{
+  padding-right: 10px;
+}
+
+.row.membersubmitrow{
+  margin-bottom: 0px;
+}
