@@ -27,7 +27,7 @@ Somme des difficultés = 45
 | #19 | En tant qu’utilisateur, je souhaite pouvoir récuperer le résultat obtenu (varchar 20) à ce test afin de le comparer avec le résultat attendu | 3 | Low | TODO |  |
 | #20 | En tant qu’utilisateur, je souhaite créer une documentation utilisateur (varchar 500) en y expliquant les fonctionnalités du projet et une documentation administrateur (varchar 500) pour expliquer comment déployer et faire marcher le projet en cliquant sur le bouton "Ajouter une documentation"| 2 | Low | TODO |  |
 | #21 | En tant qu’utilisateur, je souhaite modifier en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" une documentation utilisateur ou une documentation administrateur| 2 | Low | TODO |  |
-| #22 | En tant qu’utilisateur, je souhaite modifier le nom ou la description du projet en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" un projet| 2 | Low | DONE |  |
+| #22 | En tant qu’utilisateur, je souhaite modifier le nom ou la description du projet en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" un projet| 2 | Low | DONE | 1 |
 
 ## Sprints
 
