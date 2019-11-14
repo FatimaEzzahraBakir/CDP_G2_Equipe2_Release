@@ -1,3 +1,4 @@
+
 # CDP_G2_Equipe2_Release
 
 ## BackLog
@@ -32,8 +33,12 @@ Somme des difficultés = 45
 ## Sprints
 
 ### Sprint 1
-Les détails pour le sprint 1 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint1.md .
+Les détails pour le sprint 1 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint1.md
 Les tâches associées à ce sprint sont disponible ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Task1.md
+
+### Sprint 2
+Les détails pour le sprint 2 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint2.md
+Les tâches associées à ce sprint sont disponible ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Task2.md
 
 
 ## Release
