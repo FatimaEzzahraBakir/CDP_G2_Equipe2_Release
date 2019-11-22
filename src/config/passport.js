@@ -1,6 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../src/mongoose/model/user.model');
+const User = require('../models/user.model');
+const UserService = require('../services/user.service');
 
 module.exports = function(passport){
 
@@ -13,7 +14,7 @@ module.exports = function(passport){
         if(err) { return done(err);}
         if(!user) { return done(null, false, { message: 'login incorrect' });}
 
-        User.validPassword(password, user.password, function(err, isMatch) {
+        UserService.validPassword(password, user.password, function(err, isMatch) {
           if(err) { return done(err);}
           if(isMatch) { return done(null, user);}
           else { return done(null, false, {message: 'password incorrect'});}
@@ -28,7 +29,7 @@ module.exports = function(passport){
   });
 
   passport.deserializeUser(function(id, done) {
-    User.getUserById(id, function(err, user) {
+    User.findById(id, function(err, user) {
       done(err, user);
     });
   });

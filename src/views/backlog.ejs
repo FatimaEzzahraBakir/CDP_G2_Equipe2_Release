@@ -9,13 +9,13 @@
   <title>Issues</title>
 </head>
 
-<body>
+<body onload="SortTable(0, 'N', 'issuesTable')">
   <nav class="navmargin">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li>
           <% if(typeof project != 'undefined') { %>
-            <a href="/user/<%= user %>/projects/<%= project.name %>">
+            <a href="/user/<%= user %>/projects/<%= project.id %>">
               <i class="material-icons left">keyboard_backspace</i>Retour au projet</a></li>
 
             </ul>
@@ -29,43 +29,59 @@
         </nav>
         <div class="container">
           <div class="col s8">
-            <table>
+            <table class = "highlight responsive-table" id="issuesTable">
               <thead>
                 <tr>
+                  <th onClick="SortTable(0, 'N', 'issuesTable')">ID <i class="material-icons">unfold_more</i></th>
                   <th>Description</th>
-                  <th>Priorité</th>
-                  <th>Etat</th>
-                  <th>Difficulté</th>
+                  <th onClick="SortTable(2, 'P', 'issuesTable')">Priorité <i class="material-icons">unfold_more</i></th>
+                  <th onClick="SortTable(3, 'S', 'issuesTable')">État <i class="material-icons">unfold_more</i></th>
+                  <th onClick="SortTable(4, 'N', 'issuesTable')">Difficulté <i class="material-icons">unfold_more</i></th>
+                  <th>Sprint associé</th>
                 </tr>
               </thead>
               <tbody>
-                <% if(typeof issues != 'undefined') { %>
+                <% if(typeof issues != 'undefined') {%>
                   <% issues.forEach(function(issue) { if(issue != null){%>
                     <div class="row">
                       <tr>
-                        <td><p><%= issue.description %></p></td>
+                        <td><%= issue.num %></td>
+                        <td>
+                          <p><%= issue.description %></p>
+                        </td>
                         <td><%= issue.priority %></td>
                         <td><%= issue.state %></td>
                         <td><%= issue.difficulty %></td>
+                        <td>
+                        <% sprints.forEach( (sprintDesc, issueID) => {%>
+                        <% if(issueID == issue.id) { %>
+                        <%= sprintDesc %>
+                        <% } });%>
+                        </td>
 
-                        <td> <p><a href="/user/<%= user %>/projects/<%= project.name %>/backlog/<%= issue._id %>/update" class="center-align"><i class="material-icons left">edit</i></a></p>
-                          <p><a href="/user/<%= user %>/projects/<%= project.name %>/backlog/<%= issue._id %>/delete" class="materialize-red-text"><i class="material-icons left">delete_forever</i></a></p></td>
-                        </tr>
-                        <% }}); %>
-
-                      </tbody>
-                    </table>
-                    <% } %>
-
-                  </div>
-                  <div class="col s4">
-                    <div class="cardmargin">
-                      <a href="/user/<%= user %>/projects/<%= project.name %>/addIssue" class="waves-effect waves-light btn btn-large"><i
-                        class="material-icons left">add</i>Nouvelle issue</a>
+                        <td>
+                          <p><a href="/user/<%= user %>/projects/<%= project.id %>/backlog/<%= issue._id %>/update"
+                            class="center-align"><i class="material-icons left">edit</i></a></p>
+                            <p><a href="/user/<%= user %>/projects/<%= project.id %>/backlog/<%= issue._id %>/delete"
+                              class="materialize-red-text"><i class="material-icons left">delete_forever</i></a></p>
+                            </td>
+                          </tr>
+                          <% }}); %>
+                        </tbody>
+                      </table>
+                      <% } %>
+                    </div>
+                    <div class="col s4">
+                      <div class="cardmargin">
+                        <a href="/user/<%= user %>/projects/<%= project.id %>/addIssue"
+                          class="waves-effect waves-light btn btn-large"><i class="material-icons left">add</i>Nouvelle issue</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                </body>
+                    <script src="/scripts/sortTable.js">
+                    </script>
 
-                </html>
+                  </body>
+
+                  </html>

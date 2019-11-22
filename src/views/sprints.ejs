@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Sprints</title>
+</head>
+
+<body>
+  <nav class="navmargin">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li>
+          <% if(typeof project != 'undefined') { %>
+            <a href="/user/<%= user.login %>/projects/<%= project.id %>">
+              <i class="material-icons left">keyboard_backspace</i>Retour au projet</a></li>
+
+            </ul>
+            <a href="/" class="brand-logo center">Gestion projets</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a>Bienvenue <%= user.login %></a></li>
+              <li><a href="/logout">Déconnexion</a></li>
+            </ul>
+          </div>
+          <%}%>
+        </nav>
+        <div class="container">
+          <div class="row">
+            <div class="col s8">
+              <% if(sprints && typeof sprints != 'undefined') { %>
+                <% sprints.forEach(function(sprint) { if(sprint != null){%>
+                  <div class="row">
+                    <div class="card z-depth-3">
+                      <div class="card-content">
+                        <h6 class="card-title"><%= sprint.description %></h6>
+                        <p><%= sprint.releaseDate.getDate() %>/<%= sprint.releaseDate.getMonth() +1 %>/<%= sprint.releaseDate.getFullYear(); %></p>
+                        <ul class="collection">
+                          <% sprint.issues.forEach(function(issue){ issues_map.forEach( (issueDesc, issueID) => {%>
+                            <%if(issueID == issue) { %>
+                              <li class="collection-item"><%= issueDesc %></li>
+                              <%}%>
+                              <% })%>
+                              <% }) %>
+                            </ul>
+                          </div>
+                          <div class="card-action">
+                            <a href="/user/<%= user.login %>/projects/<%= project.id %>/sprints/update/<%= sprint._id %>" class="center-align">Modifier</a>
+                            <a href="/user/<%= user.login %>/projects/<%= project.id %>/sprints/delete/<%= sprint._id %>"
+                              class="right materialize-red-text">Supprimer</a>
+                            </div>
+                          </div>
+                        </div>
+                        <% } }); %>
+                        <% } %>
+
+                      </div>
+                      <div class="col s4">
+                        <div class="cardmargin">
+                          <a href="/user/<%= user.login %>/projects/<%= project.id %>/sprints/newSprint" class="waves-effect waves-light btn btn-large"><i
+                            class="material-icons left">add</i>Nouveau sprint</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </body>
+
+                  </html>
