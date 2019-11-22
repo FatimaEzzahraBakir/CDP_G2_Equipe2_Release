@@ -2,27 +2,22 @@
 
 ## Tâches associées au sprint 1
 
-| ID | Descriptif | Développeur | État | Issue associée | Coût |
-| :-: | -- | :-: | :-: | :-: | :-: |
-| #1 | Créer la base de donnée : créer la table Users contenant les champs ID (unsigned int 5), login (varchar 20), mail (varchar 50), password (varchar 30), la table Issues contenant les champs ID (unsigned int 5), descriptif (varchar 250), difficulté (int 3), priorité (varchar 10) , un état (varchar 10) et un IdProject (clé étrangère vers le projet associé),  la table Projects avec les champs ID (unsigned int 5), un nom (varchar 40), une description (varchar 250) qui peut etre null| Fatima | DONE | 1, 3, 5 | 1/2 |
-|#2|Créer la page web d'accueil du site /accueil contenant un bouton "S'inscrire" et un bouton "Se connecter"| Claire|DONE| 1 | 1/2 |
-|#3|Créer la page d'inscription /signup contenant un formulaire avec les champs login, mail, password et un bouton "s'inscrire" et "annuler"| Fatima| DONE | 1 | 1/2 |
-|#4|Créer le fichier de gestion d'inscription (insertion en base de donnée)| Cyril |DONE | 1 | 1/2 |
-|#5|Créer la page de connexion /signin contenant un formulaire avec les champs login et password, un bouton "se connecter" et un bouton "annuler"| Cyril| DONE | 2 | 1/2 |
-| #6 |Créer le fichier de gestion de connexion/deconnexion (gestion de la session)| Cyril |DONE | 2 | 1 |
-|#7|Créer la page "login"/projects contenant la liste de tous les projets appartenant à "login", et un bouton "Ajouter nouveau projet"| Cyril |DONE| 3 | 1/2 |
-|#8|Créer la page /newProject contenant un formulaire avec un nom et une description avec un bouton "créer" et un bouton "annuler" pour créer un nouveau projet| Claire |DONE| 3 | 1/2 |
-|#9|Créer le fichier de gestion de création de projet (insertion base de donnée)| Cyril |DONE| 3 | 1 |
-|#10|Créer la page d'un projet "login"/projects/"nomProjet" contenant les informations sur le projet, avec un bouton "Ajouter un collaborateur"| Claire |DONE| 4 | 1/2 |
-|#11|Créer la page d'ajout d'un collaborateur "login"/projects/"nomProjet"/addMember avec un formulaire contenant un champs pour le login ou le mail et un bouton "ajouter" ou "annuler"| Cyril |DONE| 4 | 1/2 |
-|#12|Créer le fichier de gestion d'ajout d'un membre au projet (base de donnée)|Cyril|DONE| 4 | 1 |
-|#13|Créer le fichier de gestion de modification d'un projet (update base de donnée)| Cyril |DONE| 22 | 1 |
-|#14|Créer le fichier de gestion de suppression d'un projet (delete base de donnée)| Cyril |DONE| 22 | 1 |
-|#15|Créer la page de modification d'un projet, contenant un formulaire pour changer les champs du nom et de la description| Cyril |DONE| 22 | 1 |
-|#16|Créer la page d'ajout d'issue "login"/projects/"nomProjet"/addIssue contenant un formulaire avec un champs description, difficulté, priorité et état, un bouton "ajouter" et un bouton "annuler"| Fatima |DONE| 5 | 1/2 |
-|#17|Créer le fichier de gestion d'ajout d'issue (insertion base de donnée)| Fatima |DONE| 5 | 1/2 |
-|#18|Créer la page d'affichage de toutes les issues "login"/projects/"nomProjet"/backlog contenant la liste de toutes les issues liées à "nomProjet" avec un bouton "ajouter", "modifier" et "supprimer"|Claire|DONE| 7 | 1 |
-|#19|Créer la gestion de classement d'issues par ordre de difficulté, de priorité ou d'état||TODO| 7 | 1 |
-|#20|Créer la gestion de la suppression d'une issue (delete base de donnée)|Claire|DONE| 6 | 1/2 |
-|#21|Créer la page de modification d'une issue "login"/projects/"nomProjet"/backlog/"idIssue" contenant un formulaire avec une description, une difficulté, une priorité et un état, un bouton "modifier" et "annuler"|Claire|DONE| 6 | 1/2 |
-|#22|Créer la gestion de la modification d'une issue (update base de donnée)|Claire|DONE| 6 | 1 |
+| ID | Description | Definition of done | Développeur | État | Issue associée | Coût |
+| :-: | -- | -- | :-: | :-: | :-: | :-: |
+| #1 | Créer la base de donnée | créer la table Users contenant les champs ID (unsigned int 5), login (varchar 20), mail (varchar 50), password (varchar 30), la table Issues contenant les champs ID (unsigned int 5), descriptif (varchar 250), difficulté (int 3), priorité (varchar 10) , un état (varchar 10) et un IdProject (clé étrangère vers le projet associé),  la table Projects avec les champs ID (unsigned int 5), un nom (varchar 40), une description (varchar 250) qui peut etre null| Fatima | DONE | 1, 3, 5 | 1/2 |
+|#2|Créer la page web d'accueil du site | la page  /accueil doit contenir un bouton "S'inscrire" et un bouton "Se connecter"| Claire|DONE| 1 | 1/2 |
+|#3| Gestion d’authentification |Créer la page d'inscription /signup contenant un formulaire avec les champs login, mail, password et un bouton "s'inscrire" en cliquant sur ce boutton les champs renseignés seront enregistrés en bases de données   et "annuler" | Fatima| DONE | 1 | 1/2 | 
+|#4|Gestion de la session | Créer la page de connexion  /signin contenant un formulaire avec les champs login et password, un bouton "se connecter" et un bouton "annuler" et créer le fichier de gestion de connexion/deconnexion | Cyril| DONE | 2 | 1/2 |
+|#5|Création de la page contenant la liste de tous les projets |Créer la page "login"/projects contenant la liste de tous les projets appartenant à "login", et un bouton "Ajouter nouveau projet"| Cyril |DONE| 3 | 1/2 |
+|#6|Ajout d’une nouveau projet insertion en base de données|Créer la page /newProject contenant un formulaire avec un nom et une description avec un bouton "créer" et un bouton "annuler" pour créer un nouveau projet| Claire |DONE| 3 | 1/2 |
+|#7|Créer la page d'un projet | la page "login"/projects/"nomProjet" doit contenir les informations sur le projet, avec un bouton "Ajouter un collaborateur"| Claire |DONE| 4 | 1/2 |
+|#8|Ajout d’un collaborateur |en cliquant sur le boutton ajouter collaborateur sur la page /"login"/projects/"idProjet". Le bouton renvoie sur la page /"login"/projects/"idProjet"/addMember qui contient un formulaire avec un champ “Développeurs”, qui est une liste déroulante remplit avec tous les développeurs présents sur le projet, un bouton annuler pour revenir sur la page précédente, et un bouton ajouter. Quand on clique sur le bouton “ajouter”, le développeur est assigné au projet | Cyril |DONE| 4 | 1/2 |
+|#9|Modification d’un projet spécifique |Sur la page /"login"/projects/"idProjet"ajouter un bouton d'édition à côté de chaque projet permettant de se rendre sur /"login"/projects/"idProjet"/update/" contenant un formulaire avec les champs "name", "description", pré-remplit par les information actuelles de le projet, un bouton "Annuler" qui permet de revenir à la page précendente, et un bouton "Modifier" qui permet de mettre à jour en base de donnée le projet "idProject" avec les nouveaux champs présents dans le formulaire | Cyril |DONE| 22 | 1 |
+|#10|Suppression  d'un projet spécifique |Sur la page /"login"/projects/"idProjet" ajouter un bouton de suppression permettant de supprimer un projet précis en base de donnée. Ce bouton charge /"login"/projects/"idProjet"/delete" qui s'occupe du traitement de suppression en supprimant lle projet de la table Projects| Cyril |DONE| 22 | 1 |
+|#11|Ajout d'issue spécifique| Sur la page /"login"/projects/"idProjet"/backlog, ajouter le bouton "+ Ajouter une nouvelle issue" qui permet d'aller sur /"login"/projects/"idProjet"/addIssue contenant un formulaire avec les champs "description", "priorité", "difficulté", "etat" ,un bouton "Annuler" qui permet de retourner à la page précédente et un bouton "Ajouter" qui permet d'ajouter les champs entrés dans ce formulaire en base de donnée, et qui redirige ensuite vers la page /"login"/projects/"idProjet"/backlog| Fatima |DONE| 5 | 1/2 |
+|#12|Créer la page d'affichage de toutes les issues | la page "login"/projects/"nomProjet"/backlog doit contenir la liste de toutes les issues liées à "nomProjet" avec un bouton "ajouter", "modifier" et "supprimer"|Claire|DONE| 7 | 1 |
+| #13 | Créer la gestion de classement d'issues par ordre de difficulté, de priorité ou d'état | placer une flèche à côté de "Priorité" et "Etat". En cliquant sur cette flèche, on affiche les issues par ordre croissant soit de priorité, soit d'état, et en cliquant une nouvelle fois on les affiche par ordre décroissant |Cyril | TODO| 7| 1 |
+|#14|Suppression d’une issue spécifique|Sur la page /"login"/projects/"idProjet/backlog" ajouter un bouton de suppression devant chaque issue  permettant de supprimer une issue précise en base de donnée. Ce bouton charge /"login"/projects/"idProjet"/backlog/idIssue/delete" qui s'occupe du traitement de suppression en supprimant l’issue de la table issues|Claire|DONE| 6 | 1/2 |
+|#15|Modification d'une issue spécifique | Sur la page /"login"/projects/"idProjet"/backlog ajouter un bouton d'édition à côté de chaque issue permettant de se rendre sur /"login"/projects/"idProjet"/backlog/idIssue/update/" contenant un formulaire avec les champs  pré-remplit par les information actuelles de l’issue, un bouton "Annuler" qui permet de revenir à la page précendente, et un bouton "Modifier" qui permet de mettre à jour en base de donnée le’issue "idIssue" avec les nouveaux champs présents dans le formulaire|Claire|DONE| 6 | 1/2 |
+
+
