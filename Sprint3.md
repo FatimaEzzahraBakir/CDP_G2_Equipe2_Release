@@ -1,6 +1,6 @@
 # Sprint 3
 
-## User Stories associées au sprint 2
+## User Stories associées au sprint 3
 
 | ID  |  Description    | Difficulté  | Priorité  |    État    |    Sprint associé    |
 |---|------|---|---|--------|-----|
