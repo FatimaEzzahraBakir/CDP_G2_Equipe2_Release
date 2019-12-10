@@ -51,4 +51,4 @@ Les différentes releases sont renseignées dans Release.md : https://github.com
 
 ## Installation
 
-Pour l'installation, se réferer à la documentation administrateur du dossier doc.
+Pour l'installation, se réferer à la documentation administrateur du dossier doc : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/doc/adminDoc.md
