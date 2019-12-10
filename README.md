@@ -23,11 +23,11 @@ Somme des difficultés = 45
 | #14 | En tant qu’utilisateur, je peux créer un nouveau Sprint, composée d'un ID (unsigned int 5), un projet associé (Project) et une date de sortie (Date) et une description (varchar 500) en cliquant sur le bouton "Créer un sprint" | 2 | Low | DONE | 2 |
 | #15 | En tant qu’utilisateur, je peux modifier la date de sortie, et la description d'un sprint en cliquant sur le bouton "Modifier", supprimer un sprint en cliquant sur le bouton "Supprimer"| 2 | Low | DONE |2  |
 | #16 | En tant qu’utilisateur, je peux avoir la liste de mes sprints associés à un projet et les trier par ordre chronologique | 2 | Low | DONE | 2 |
-| #17 | En tant qu’utilisateur, je souhaite créer un test avec son ID (unsigned int 5), son nom (varchar 20), son résultat attendu (varchar 20) et son niveau (au choix entre validation et unitaire, varchar 10) en cliquant sur le bouton "Ajouter un test"| 2 | Low | TODO | 3 |
-| #18 | En tant qu’utilisateur, je souhaite supprimer un test en cliquant sur le bouton "Supprimer", ou modifier son résultat attendu en cliquant sur le bouton "Modifier"| 1 | Low | TODO | 3 |
-| #19 | En tant qu’utilisateur, je souhaite pouvoir récuperer le résultat obtenu (varchar 20) à ce test afin de le comparer avec le résultat attendu | 3 | Low | TODO | 3 |
-| #20 | En tant qu’utilisateur, je souhaite créer une documentation utilisateur (varchar 500) en y expliquant les fonctionnalités du projet et une documentation administrateur (varchar 500) pour expliquer comment déployer et faire marcher le projet en cliquant sur le bouton "Ajouter une documentation"| 2 | Low | TODO |3  |
-| #21 | En tant qu’utilisateur, je souhaite modifier en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" une documentation utilisateur ou une documentation administrateur| 2 | Low | TODO | 3 |
+| #17 | En tant qu’utilisateur, je souhaite créer un test avec son ID (unsigned int 5), son nom (varchar 20), son résultat attendu (varchar 20) et son niveau (au choix entre validation et unitaire, varchar 10) en cliquant sur le bouton "Ajouter un test"| 2 | Low | DONE | 3 |
+| #18 | En tant qu’utilisateur, je souhaite supprimer un test en cliquant sur le bouton "Supprimer", ou modifier son résultat attendu en cliquant sur le bouton "Modifier"| 1 | Low | DONE | 3 |
+| #19 | En tant qu’utilisateur, je souhaite pouvoir récuperer le résultat obtenu (varchar 20) à ce test afin de le comparer avec le résultat attendu | 3 | Low | DONE | 3 |
+| #20 | En tant qu’utilisateur, je souhaite créer une documentation utilisateur (varchar 500) en y expliquant les fonctionnalités du projet et une documentation administrateur (varchar 500) pour expliquer comment déployer et faire marcher le projet en cliquant sur le bouton "Ajouter une documentation"| 2 | Low | DONE |3  |
+| #21 | En tant qu’utilisateur, je souhaite modifier en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" une documentation utilisateur ou une documentation administrateur| 2 | Low | DONE | 3 |
 | #22 | En tant qu’utilisateur, je souhaite modifier le nom ou la description du projet en cliquant sur le bouton "Modifier" ou supprimer en cliquant sur le bouton "Supprimer" un projet| 2 | Low | DONE | 1 |
 
 ## Sprints
@@ -40,6 +40,10 @@ Les tâches associées à ce sprint sont disponible ici : https://github.com/Fat
 Les détails pour le sprint 2 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint2.md
 Les tâches associées à ce sprint sont disponible ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Task2.md
 
+### Sprint 
+Les détails pour le sprint 3 sont disponibles ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Sprint3.md
+Les tâches associées à ce sprint sont disponible ici : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/blob/master/Task3.md
+
 
 ## Release
 
@@ -47,15 +51,4 @@ Les différentes releases sont renseignées dans Release.md : https://github.com
 
 ## Installation
 
-Après avoir télécharger une des releases, extraire l'archive. Se placer dans le dossier et executer ces commandes via un terminal :
-
-```
-npm install
-```
-
-Une fois toutes ces dépendances installées, vous pourrez lancer le programme, depuis le même dossier, avec cette commande :
-
-```
-node app.js
-```
-Pour voir l'application, depuis un navigateur se rendre à l'adresse : http://localhost:8080/
+Pour l'installation, se réferer à la documentation administrateur du dossier doc.
