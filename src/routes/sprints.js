@@ -1,19 +1,29 @@
-const ReleaseController = require('../controllers/release.controller');
+const SprintController = require('../controllers/sprint.controller');
 
 module.exports = function (app) {
 
-  app.get('/user/:login/projects/:project_id/sprints/newSprint', ReleaseController.ReleaseNewGet);
+  app.get('/user/:login/projects/:project_id/sprints/newSprint', SprintController.SprintNewGet);
 
   app.post('/user/:login/projects/:project_id/sprints/newSprint',
-    ReleaseController.validate(),
-    ReleaseController.ReleaseNewPost);
+    SprintController.validate(),
+    SprintController.SprintNewPost);
 
-  app.get('/user/:login/projects/:project_id/sprints', ReleaseController.ReleasesGet);
+  app.get('/user/:login/projects/:project_id/sprints', SprintController.SprintsGet);
 
-  app.get('/user/:login/projects/:project_id/sprints/delete/:sprint_id', ReleaseController.ReleaseDeleteGet);
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id/delete', SprintController.SprintDeleteGet);
 
-  app.get('/user/:login/projects/:project_id/sprints/update/:sprint_id', ReleaseController.ReleaseUpdateGet);
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id/update', SprintController.SprintUpdateGet);
 
-  app.post('/user/:login/projects/:project_id/sprints/update/:sprint_id', ReleaseController.ReleaseUpdatePost);
+  app.post('/user/:login/projects/:project_id/sprints/:sprint_id/update', SprintController.SprintUpdatePost);
+
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id', SprintController.SprintDetailsGet);
+
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id/issues', SprintController.SprintIssuesGet);
+
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id/tasks', SprintController.SprintTasksGet);
+
+  app.get('/user/:login/projects/:project_id/sprints/:sprint_id/sprintOver', SprintController.SprintOverGet);
+
+  app.post('/user/:login/projects/:project_id/sprints/:sprint_id/sprintOver', SprintController.SprintOverPost);
 
 }

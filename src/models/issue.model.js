@@ -7,9 +7,11 @@ var issueSchema = new Schema({
   priority: String,
   difficulty: Number,
   state:String,
+  sprint: { type: Schema.Types.ObjectId, ref: 'sprints' },
   project: { type: Schema.Types.ObjectId, ref: 'projects' },
-  release: { type: Schema.Types.ObjectId, ref: 'release' },
   tasks: [{ type: Schema.Types.ObjectId, ref: 'tasks' }]
+}, {
+  usePushEach: true
 });
 
 const Issue = mongoose.model('issues', issueSchema);

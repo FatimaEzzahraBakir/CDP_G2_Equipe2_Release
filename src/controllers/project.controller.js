@@ -1,4 +1,5 @@
 const ProjectService = require('../services/project.service');
+const SprintService = require('../services/sprint.service');
 const FlashError = require('../utils/flashError');
 const { check, validationResult } = require('express-validator');
 
@@ -18,7 +19,7 @@ exports.projectNewPost = async function (req, res, next) {
     description: req.body.description,
     members: [req.user.id]
   };
-  
+
   await ProjectService.createProject(projectObject, req.user);
   return res.redirect('/user/' + req.params.login + '/projects');
 }
@@ -26,10 +27,15 @@ exports.projectNewPost = async function (req, res, next) {
 exports.projectDetails = async function (req, res, next) {
   let members_ids = res.locals.project.members;
   members = await ProjectService.getMembers(members_ids);
+  let sprintsTmp = await SprintService.getSprintsFromProject(res.locals.project.id);
+  let sprint = await SprintService.getTodaySprints(sprintsTmp);
+  let tasks = await ProjectService.getTasks(res.locals.project);
   return res.render('myProject', {
-    user: req.user.login,
+    user: req.user,
     project: res.locals.project,
-    members: members
+    members: members,
+    sprint: sprint,
+    tasks: tasks
   });
 }
 
@@ -82,7 +88,7 @@ exports.projectUpdatePost = async function (req, res, next) {
   return res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id);
 }
 
-exports.projectDeleteGet = async function (req, res, next){
+exports.projectDeleteGet = async function (req, res, next) {
   let project = res.locals.project;
   await ProjectService.deleteProject(project);
   res.redirect('/user/' + req.params.login + '/projects/');
@@ -91,3 +97,50 @@ exports.projectDeleteGet = async function (req, res, next){
 exports.projectNewGet = async function (req, res, next) {
   return res.render('newProject', { user: req.user.login });
 }
+
+exports.docNewGet = function (req, res) {
+  return res.render('newDoc', {
+    user: req.user.login,
+    project: res.locals.project
+  });
+}
+
+exports.docNewPost = function (req, res) {
+  const userDoc = req.body.userDoc;
+  const adminDoc = req.body.adminDoc;
+  let response = {};
+  if (userDoc) {
+    response.user = true;
+    ProjectService.setUserDoc(req.params.project_id, userDoc);
+  }
+  if (adminDoc) {
+    response.admin = true;
+    ProjectService.setAdminDoc(req.params.project_id, adminDoc);
+  }
+  return res.send(response);
+}
+
+exports.docGet = function (req, res) {
+  let fileName = req.params.docname;
+  if (fileName !== 'adminDoc.txt' && fileName !== 'userDoc.txt')
+    return res.status(404).send();
+
+  let docs = {
+    "adminDoc.txt": res.locals.project.adminDoc,
+    "userDoc.txt": res.locals.project.userDoc
+  };
+
+  res.set({ "Content-Disposition": "attachment; filename=\"" + fileName + "\"" });
+  return res.send(docs[fileName]);
+}
+
+exports.docDelete = function (req, res) {
+  let project = res.locals.project;
+  let type = req.query.type;
+  if (type === 'user') {
+    ProjectService.setUserDoc(project._id, "");
+  } else if (type === 'admin') {
+    ProjectService.setAdminDoc(project._id, "");
+  }
+  return res.redirect('/user/' + req.params.login + '/projects/' + project._id + '/newDoc');
+};

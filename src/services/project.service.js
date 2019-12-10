@@ -1,8 +1,10 @@
 const Project = require('../models/project.model');
 const Issue = require('../models/issue.model');
 const Task = require('../models/task.model');
+const Test = require('../models/test.model');
 const Release = require('../models/release.model');
 const User = require('../models/user.model');
+const Sprint = require('../models/sprint.model');
 const FlashError = require('../utils/flashError');
 const { check, validationResult } = require('express-validator');
 
@@ -36,8 +38,10 @@ exports.deleteProject = function (project) {
         let promises = [
             Task.deleteMany({ project: project.id }).exec(),
             Issue.deleteMany({ project: project.id }).exec(),
-            Release.deleteMany({ project: project.id }).exec()
-        ]
+            Release.deleteMany({ project: project.id }).exec(),
+            Test.deleteMany({ project: project.id}).exec(),
+            Sprint.deleteMany({ project: project.id}).exec()
+        ];
 
         User.updateMany(
             { _id: project.members },
@@ -99,15 +103,50 @@ exports.getTasks = function (project) {
     });
 }
 
-exports.addMember = function (query, project_id) {
+exports.getTests = function (project) {
     return new Promise(function (resolve) {
+        let res = [];
+        if (typeof project.tests == 'undefined' || project.tests.length === 0) {
+            resolve(res);
+        }
+        let promises = [];
+        project.tests.forEach(test_id => {
+            promises.push(Test.findById(test_id).exec());
+        });
+        Promise.all(promises).then(values => {
+            resolve(values);
+        });
+    });
+}
+
+exports.getTest = function (project, test_id) {
+    return new Promise(function (resolve) {
+        let res = [];
+        if (typeof project.tests == 'undefined' || project.tests.length === 0
+            && typeof test_id == 'undefined') {
+            resolve(res);
+        }
+        let promises = [];
+        project.tests.forEach(tid => {
+            if (tid == test_id)
+                promises.push(Test.findById(tid).exec());
+        });
+        Promise.all(promises).then(values => {
+            resolve(values);
+        });
+    });
+}
+
+exports.addMember = function (query, project_id) {
+    return new Promise(function (resolve, reject) {
         User.findOneAndUpdate(
             query,
             { $addToSet: { projects: project_id } }, //ajoute project au user
             function (err, userInvited) {
                 if (err) throw err;
                 if (!userInvited) {
-                    throw new FlashError('L\'utilisateur n\'a pas été trouvé');
+                    reject(new FlashError('L\'utilisateur n\'a pas été trouvé'));
+                    return;
                 }
                 //ajoute user au project        
                 Project.findOneAndUpdate(
@@ -121,6 +160,32 @@ exports.addMember = function (query, project_id) {
             }
         )
     });
+}
+
+exports.setUserDoc = function (project_id, userDoc) {
+    return new Promise(function (resolve) {
+        Project.findByIdAndUpdate(
+            project_id,
+            { userDoc: userDoc },
+            (err) => {
+                if (err) throw err;
+                resolve();
+            }
+        );
+    })
+}
+
+exports.setAdminDoc = function (project_id, adminDoc) {
+    return new Promise(function (resolve) {
+        Project.findByIdAndUpdate(
+            project_id,
+            { adminDoc: adminDoc },
+            (err) => {
+                if (err) throw err;
+                resolve();
+            }
+        );
+    })
 }
 
 exports.updateProject = function (project_id, name, description) {

@@ -1,60 +1,57 @@
 const ReleaseService = require('../services/release.service');
+const ProjectService = require('../services/project.service');
 const { check, validationResult } = require('express-validator');
 
-exports.validate = function () {
+
+exports.validate = () => {
   return ReleaseService.validateNewRelease();
 }
 
-exports.ReleaseNewGet = function (req, res, next) {
-  res.render('newSprint', {
-    user: req.user,
+exports.ReleaseGetList = async function (req, res, next) {
+  let releases = await ReleaseService.getReleasesFromProject(res.locals.project);
+  let issues = await ProjectService.getIssues(res.locals.project);
+  res.render('releases', {
     project: res.locals.project,
-    errors: [req.flash('error')]
+    user: req.user,
+    releases : releases,
+    issues: issues
   });
 }
 
-exports.ReleaseNewPost = async function (req, res, next) {
+exports.ReleaseGetNew = async function(req, res, next) {
+  let issues = await ProjectService.getIssues(res.locals.project);
+  res.render('newRelease',{
+    user: req.user,
+    project: res.locals.project,
+    issues: issues,
+    errors : []
+  });
+}
+
+exports.ReleasePostNew = async function(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.render('newSprint', {
+    let issues = await ProjectService.getIssues(res.locals.project);
+    return res.render('newRelease', {
       user: req.user,
       project: res.locals.project,
+      issues: issues,
       errors: errors.array()
     });
   }
   let releaseObject = {
+    project: req.params.project_id,
+    version : req.body.version,
+    releaseDate : Date.parse(req.body.releaseDate),
+    link : req.body.link,
     description: req.body.description,
-    releaseDate: Date.parse(req.body.date),
-    issues: [],
-    features: '',
-    project: req.params.project_id
-  };
+    issues : req.body.issues
+  }
   await ReleaseService.createRelease(releaseObject);
-  res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id + '/sprints');
-
+  return res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id +'/releases');
 }
 
-exports.ReleasesGet = async function (req, res, next) {
-  let releases = await ReleaseService.getReleasesFromProject(req.params.project_id);
-  let issues_map = await ReleaseService.getIssuesMap(releases);
-  return res.render('sprints', { user: req.user, project: res.locals.project, sprints: releases, issues_map: issues_map });
-}
-
-exports.ReleaseDeleteGet = async function (req, res, next) {
-  await ReleaseService.deleteRelease(req.params.sprint_id);
-  res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id + '/sprints');
-}
-
-exports.ReleaseUpdateGet = async function (req, res, next) {
-  let release = await ReleaseService.getRelease(req.params.sprint_id);
-  return res.render('updateSprint', {
-    user: req.user,
-    project: res.locals.project,
-    sprint: req.params.sprint_id
-  });
-}
-
-exports.ReleaseUpdatePost = async function (req, res, next) {
-  await ReleaseService.updateRelease(req.params.sprint_id, req.body.date, req.body.description);
-  res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id + "/sprints");
+exports.ReleaseGetDelete = async function(req, res, next) {
+  await ReleaseService.deleteRelease(req.params.release_id);
+  return res.redirect('/user/' + req.params.login + '/projects/' + req.params.project_id +'/releases');
 }
