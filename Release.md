@@ -41,7 +41,7 @@ Liens pour le téléchargement : https://github.com/FatimaEzzahraBakir/CDP_G2_Eq
 
 ## Release v0.3.0
 
-Date de cette release : 10/12/19 - 
+Date de cette release : 10/12/19 - 14h03
 
 Liens pour le téléchargement : https://github.com/FatimaEzzahraBakir/CDP_G2_Equipe2_Release/releases/tag/CDP_v0.3.0
 
